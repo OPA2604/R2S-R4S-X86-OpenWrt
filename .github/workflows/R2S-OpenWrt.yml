@@ -123,16 +123,16 @@ jobs:
       with:
         name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM
         path: ./artifact.zip
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.workflow_token }}
-      with:
-        tag_name: ${{ steps.assemble_artifact.outputs.release_tag }}
-        release_name: 自动发布 ${{ steps.assemble_artifact.outputs.release_tag }}
-        draft: false
-        prerelease: false
+    #- name: Create Release
+    #  id: create_release
+    #  uses: actions/create-release@main
+    #  env:
+    #    GITHUB_TOKEN: ${{ secrets.workflow_token }}
+    #  with:
+    #    tag_name: ${{ steps.assemble_artifact.outputs.release_tag }}
+    #    release_name: 自动发布 ${{ steps.assemble_artifact.outputs.release_tag }}
+    #    draft: false
+    #    prerelease: false
 
     - name: Upload Release Asset
       id: upload-release-asset
